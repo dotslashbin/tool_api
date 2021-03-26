@@ -14,4 +14,4 @@ RUN go build -o tool_api .
 
 EXPOSE 5000 
 
-# CMD ["./tool_api"]
+CMD ["./tool_api"]
