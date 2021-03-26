@@ -10,7 +10,7 @@ RUN go mod download
 
 COPY . .
 
-RUN go build -o tool_api . 
+RUN GOOS=linux go build -o tool_api . 
 
 EXPOSE 5000 
 
