@@ -1,9 +1,7 @@
-FROM alpine:latest
+FROM golang:1.16
 
-WORKDIR /bin
-
-COPY . .
+COPY tool_api /go/bin
 
 EXPOSE 5000
 
-CMD ["./tool_api"]
+CMD ["/go/bin/tool_api"]
