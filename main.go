@@ -1,7 +1,14 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"log"
+	"net/http"
+	"tool_api/router"
+)
 
 func main() {
-	fmt.Println("hello world")
+	router := router.Mux()
+	fmt.Println("webserver running ... version 2")
+	log.Fatal(http.ListenAndServe(":5000", router))
 }
