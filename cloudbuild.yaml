@@ -1,11 +1,11 @@
 steps:
 # This step builds the container image.
-- name: 'asia.gcr.io/toolapi-308804/toolapi'
+- name: 'gcr.io/toolapi-308804/github.com/dotslashbin/tool_api'
   id: Build
   args:
   - 'build'
   - '-t'
-  - 'gcr.io/toolapi-308804/toolapi:$SHORT_SHA'
+  - 'gcr.io/toolapi-308804/github.com/dotslashbin/tool_api:$SHORT_SHA'
   - '.'
 
 # This step pushes the image to Container Registry
@@ -15,4 +15,4 @@ steps:
   id: Push
   args:
   - 'push'
-  - 'gcr.io/toolapi-308804/toolapi:$SHORT_SHA'
+  - 'gcr.io/toolapi-308804/github.com/dotslashbin/tool_api:$SHORT_SHA'
