@@ -9,6 +9,6 @@ import (
 
 func main() {
 	router := router.Mux()
-	fmt.Println("webserver running ... version 2")
+	fmt.Println("webserver running ... test 1")
 	log.Fatal(http.ListenAndServe(":5000", router))
 }
