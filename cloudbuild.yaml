@@ -1,0 +1,18 @@
+steps:
+# This step builds the container image.
+- name: 'asia.gcr.io/toolapi-308804/toolapi'
+  id: Build
+  args:
+  - 'build'
+  - '-t'
+  - 'gcr.io/toolapi-308804/toolapi:$SHORT_SHA'
+  - '.'
+
+# This step pushes the image to Container Registry
+# The PROJECT_ID and SHORT_SHA variables are automatically
+# replaced by Cloud Build.
+- name: 'asia.gcr.io/toolapi-308804/toolapi'
+  id: Push
+  args:
+  - 'push'
+  - 'gcr.io/toolapi-308804/toolapi:$SHORT_SHA'
