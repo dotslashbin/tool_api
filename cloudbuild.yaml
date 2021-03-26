@@ -1,18 +1,18 @@
 steps:
 # This step builds the container image.
-- name: 'gcr.io/toolapi-308804/github.com/dotslashbin/tool_api'
+- name: 'gcr.io/$PROJECT_ID/github.com/dotslashbin/tool_api'
   id: Build
   args:
   - 'build'
   - '-t'
-  - 'gcr.io/toolapi-308804/github.com/dotslashbin/tool_api:$SHORT_SHA'
+  - 'gcr.io/$PROJECT_ID/github.com/dotslashbin/tool_api:$SHORT_SHA'
   - '.'
 
 # This step pushes the image to Container Registry
 # The PROJECT_ID and SHORT_SHA variables are automatically
 # replaced by Cloud Build.
-- name: 'asia.gcr.io/toolapi-308804/toolapi'
+- name: 'push gcr.io/$PROJECT_ID/toolapi'
   id: Push
   args:
   - 'push'
-  - 'gcr.io/toolapi-308804/github.com/dotslashbin/tool_api:$SHORT_SHA'
+  - 'gcr.io/$PROJECT_ID/github.com/dotslashbin/tool_api:$SHORT_SHA'
