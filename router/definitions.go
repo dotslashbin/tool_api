@@ -26,7 +26,7 @@ var routes = Routes{
 func testRoute(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json; charset=utf-8")
 
-	test := []string{"this", "is", "testing WOHOO"}
+	test := []string{"this", "is", "testing verision 5"}
 
 	json.NewEncoder(w).Encode(test)
 }
